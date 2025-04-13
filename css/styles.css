@@ -1,0 +1,152 @@
+/* Variables de couleur */
+:root {
+    --primary-color: #444;
+    --primary-color-hover: #666;
+    --background-color: #000;
+    --text-color: #fff;
+    --container-bg-color: rgba(255, 255, 255, 0.281);
+    --container-shadow-color: rgba(255, 255, 255, 0.1);
+    --footer-text-color: #888;
+    --footer-link-color: #888;
+    --footer-link-hover-color: #bbb;
+}
+
+/* Styles de base */
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+h1, h2, h3 {
+    font-weight: 700; /* Texte en gras pour les titres */
+}
+
+p {
+    font-weight: 300; /* Texte normal pour les paragraphes */
+}
+
+body {
+    /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+body.solid-bg {
+    background-color: #e07373; /* Couleur de fond sombre */
+    color: var(--text-color);
+}
+
+/* Styles pour le logo */
+.logo {
+    width: 150px;
+    height: auto;
+    z-index: 2;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styles pour les conteneurs */
+.container {
+    align-self: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 10px var(--container-shadow-color);
+    min-width: 400px;
+    max-width: 600px;
+    width: 80%;
+}
+
+/* Styles pour les boutons */
+a.button {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+a.button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+a.border-btn {
+    border: 2px solid rgba(255, 255, 255, 0.514);
+}
+
+.top-right-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.top-right-btn-2 {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* 135px si 2 btn */
+    z-index: 2;
+}
+
+.top-left-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.contact-btn {
+    margin-top: 15px;
+}
+
+/* Styles pour le footer */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    color: var(--footer-text-color);
+    z-index: 2;
+}
+
+footer a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--footer-link-hover-color);
+    text-decoration: underline;
+}
+
+/* Styles pour le canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Particules */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Assure que le conteneur reste en arrière-plan */
+}
