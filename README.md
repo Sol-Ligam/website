@@ -17,4 +17,5 @@ Les modifications apportées au code source sont automatiquement testées et dé
 Tous droits réservés.
 
 ---
-*Pour toute question ou assistance, contactez-nous à contact@solligam.fr.
+
+Pour toute question ou assistance, contactez-nous à <contact@solligam.fr>.
