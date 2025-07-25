@@ -40,6 +40,8 @@ email: "contact@solligam.fr"
 # Social/Contact
 social:
   email: "contact@solligam.fr"
+  instagram: "https://www.instagram.com/sol_ligam/"
+  linkedin: "https://www.linkedin.com/company/sol-ligam/"
   
 # Company info
 company:
@@ -57,7 +59,7 @@ navigation:
   - name: "Outils"
     url: "/outils/"
   - name: "Contact"
-    url: "#contact"
+    url: "/contact/"
 
 # SEO
 seo:
