@@ -1,0 +1,68 @@
+# Jekyll configuration for Sol Ligam website
+title: "Sol Ligam"
+description: "Accompagnement pour la réduction de l'impact carbone"
+url: "https://solligam.fr"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude from processing
+exclude:
+  - archive/
+  - node_modules/
+  - .bundle/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .git/
+  - .gitignore
+
+# Site settings
+lang: fr
+author: "Sol Ligam"
+email: "contact@solligam.fr"
+
+# Social/Contact
+social:
+  email: "contact@solligam.fr"
+  instagram: "https://www.instagram.com/sol_ligam/"
+  linkedin: "https://www.linkedin.com/company/sol-ligam/"
+  
+# Company info
+company:
+  name: "SAS Sol Ligam"
+  address: "215 cours du maréchal gallieni, 33000 Bordeaux"
+  phone: ""
+  carbon_simulator: "https://monbilancarbone.solligam.fr"
+
+# Navigation
+navigation:
+  - name: "Accueil"
+    url: "/"
+  - name: "Nos projets"
+    url: "/projets/"
+  - name: "Outils"
+    url: "/outils/"
+  - name: "À propos"
+    url: "/a-propos/"
+  - name: "Contact"
+    url: "/contact/"
+
+# SEO
+seo:
+  type: "Organization"

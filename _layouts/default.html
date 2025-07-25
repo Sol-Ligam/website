@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'fr' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.author }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- SEO and Social -->
+  {% seo %}
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="{{ '/images/brand/logo.webp' | relative_url }}" as="image">
+  
+  <!-- Matomo Analytics -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://matomo.duperret.eu/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '5']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+</head>
+<body>
+  {% include header.html %}
+  
+  <main>
+    {{ content }}
+  </main>
+  
+  {% include footer.html %}
+  
+  <!-- Theme switching and site functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update copyright year
+      const yearElement = document.getElementById('current-year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+      
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const accessibilityToggle = document.getElementById('accessibility-toggle');
+      
+      // Load saved themes
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedAccessible = localStorage.getItem('accessible') === 'true';
+      
+      // Apply saved settings
+      document.documentElement.setAttribute('data-theme', savedAccessible ? 'accessible' : savedTheme);
+      updateToggleStates(savedTheme, savedAccessible);
+      
+      // Theme toggle (light/dark)
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          const isAccessible = localStorage.getItem('accessible') === 'true';
+          
+          localStorage.setItem('theme', newTheme);
+          document.documentElement.setAttribute('data-theme', isAccessible ? 'accessible' : newTheme);
+          updateToggleStates(newTheme, isAccessible);
+        });
+      }
+      
+      // Accessibility toggle
+      if (accessibilityToggle) {
+        accessibilityToggle.addEventListener('click', () => {
+          const isAccessible = localStorage.getItem('accessible') === 'true';
+          const newAccessible = !isAccessible;
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          
+          localStorage.setItem('accessible', newAccessible.toString());
+          document.documentElement.setAttribute('data-theme', newAccessible ? 'accessible' : currentTheme);
+          updateToggleStates(currentTheme, newAccessible);
+        });
+      }
+      
+      function updateToggleStates(theme, accessible) {
+        // Update theme toggle icon
+        if (themeToggle) {
+          const themeIcon = themeToggle.querySelector('.theme-icon');
+          if (themeIcon) {
+            themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
+            themeToggle.title = theme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair';
+          }
+        }
+        
+        // Update accessibility toggle state
+        if (accessibilityToggle) {
+          accessibilityToggle.classList.toggle('active', accessible);
+          accessibilityToggle.title = accessible ? 'Désactiver le mode accessible' : 'Activer le mode accessible';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

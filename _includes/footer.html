@@ -1,0 +1,43 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ site.company.name }}</h3>
+        <p>{{ site.description }}</p>
+        <div class="social-links">
+          <a href="mailto:{{ site.social.email }}" title="Email">📧</a>
+          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" title="Instagram">📷</a>
+          <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" title="LinkedIn">💼</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Outils gratuits</h3>
+        <p>
+          <strong>Simulateur carbone :</strong><br>
+          <a href="{{ site.company.carbon_simulator }}" target="_blank" rel="noopener">
+            monbilancarbone.solligam.fr
+          </a>
+        </p>
+        <p>Calculez l'empreinte carbone de vos événements et projets gratuitement.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          {{ site.company.address }}<br>
+          <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a>
+        </p>
+        <ul>
+          <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Nous contacter</a></li>
+          <li><a href="{{ '/a-propos/' | relative_url }}">À propos</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025-<span id="current-year"></span> {{ site.company.name }} - Tous droits réservés</p>
+    </div>
+  </div>
+</footer>

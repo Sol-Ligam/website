@@ -1,0 +1,54 @@
+---
+layout: page
+title: "Nos précédents projets"
+description: "Découvrez les projets que nous avons accompagnés dans leur démarche de réduction d'impact carbone."
+permalink: /projets/
+---
+
+<div class="section">
+  <div class="container">
+    <p>Découvrez quelques-uns des projets que nous avons accompagnés dans leur démarche de réduction d'impact carbone. Chaque projet est unique et nécessite une approche personnalisée.</p>
+    
+    <!-- Projects will be populated from _projects collection -->
+    {% if site.projects.size > 0 %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        {% for project in site.projects %}
+          <div class="card">
+            <h3>{{ project.title }}</h3>
+            <p><strong>Secteur:</strong> {{ project.sector }}</p>
+            <p><strong>Réduction d'émissions:</strong> {{ project.reduction }}</p>
+            <p>{{ project.description }}</p>
+            
+            {% if project.results %}
+              <div style="margin-top: 1rem; padding: 1rem; background-color: var(--background-light); border-radius: var(--border-radius);">
+                <h4>Résultats</h4>
+                <ul>
+                  {% for result in project.results %}
+                    <li>{{ result }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="card" style="text-align: center; margin-top: 3rem;">
+        <h3>Projets en cours de publication</h3>
+        <p>Nous mettons actuellement à jour cette section avec nos derniers projets d'accompagnement. Revenez bientôt pour découvrir nos réalisations !</p>
+        <a href="mailto:{{ site.social.email }}" class="btn btn-primary">Contactez-nous pour en savoir plus</a>
+      </div>
+    {% endif %}
+    
+    <!-- Call to action -->
+    <div style="text-align: center; margin-top: 4rem;">
+      <div class="card" style="background: linear-gradient(135deg, var(--primary-green), var(--text-dark)); color: var(--text-light); text-align: center;">
+        <h3 style="color: var(--text-light);">Votre projet nous intéresse</h3>
+        <p style="margin: 1rem auto; max-width: 60ch;">Chaque structure a ses propres défis en matière de réduction d'impact carbone. Parlons de votre projet et de la façon dont nous pouvons vous accompagner.</p>
+        <a href="mailto:{{ site.social.email }}?subject=Suite à la visite de votre site - Parlons de mon projet" class="btn" style="background-color: var(--text-light); color: var(--primary-green); margin-top: 1rem;">
+          Discutons de votre projet
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

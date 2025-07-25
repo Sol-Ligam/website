@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Contact - Sol Ligam"
+description: "Contactez Sol Ligam pour votre accompagnement en réduction d'impact carbone. Email, Instagram, LinkedIn."
+---
+
+<!-- Contact Page with Redirections -->
+<section class="hero">
+  <div class="container">
+    <h1>Contactez-nous</h1>
+    <p>Prêt à réduire votre impact carbone ? Contactez-nous via vos canaux préférés.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2>Choisissez votre moyen de contact</h2>
+      <p>Nous sommes disponibles sur plusieurs canaux pour répondre à vos questions et discuter de vos projets de décarbonation.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;">
+        <!-- Email -->
+        <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px;">
+          <h3>📧 Email</h3>
+          <p>Pour un échange détaillé sur vos besoins</p>
+          <a href="mailto:{{ site.social.email }}" class="btn btn-primary">
+            Envoyer un email
+          </a>
+        </div>
+        
+        <!-- Instagram -->
+        <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px;">
+          <h3>📷 Instagram</h3>
+          <p>Suivez nos actualités et projets</p>
+          <a href="{{ site.social.instagram }}" class="btn btn-primary" target="_blank" rel="noopener">
+            Voir notre Instagram
+          </a>
+        </div>
+        
+        <!-- LinkedIn -->
+        <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px;">
+          <h3>💼 LinkedIn</h3>
+          <p>Réseau professionnel et articles</p>
+          <a href="{{ site.social.linkedin }}" class="btn btn-primary" target="_blank" rel="noopener">
+            Voir notre LinkedIn
+          </a>
+        </div>
+      </div>
+      
+      <!-- Company Information -->
+      <div style="margin-top: 3rem; padding: 2rem; background-color: var(--background-white); border-radius: var(--border-radius);">
+        <h3>Informations pratiques</h3>
+        <p><strong>Email :</strong> {{ site.social.email }}</p>
+        <p><strong>Adresse :</strong> {{ site.company.address }}</p>
+        <p><strong>Simulateur gratuit :</strong> <a href="{{ site.company.carbon_simulator }}" target="_blank">{{ site.company.carbon_simulator }}</a></p>
+      </div>
+      
+      <!-- Quick Actions -->
+      <div style="margin-top: 2rem;">
+        <h3>Actions rapides</h3>
+        <p>
+          <a href="{{ site.company.carbon_simulator }}" class="btn btn-outline" target="_blank" style="margin-right: 1rem;">
+            Essayer le simulateur
+          </a>
+          <a href="/projets/" class="btn btn-outline">
+            Voir nos projets
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
