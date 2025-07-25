@@ -5,18 +5,32 @@
         <img src="{{ '/images/brand/logo.webp' | relative_url }}" alt="{{ site.title }}" class="site-logo">
       </a>
       
-      <nav class="site-navigation">
-        <ul class="site-nav">
-          {% for nav_item in site.navigation %}
-            <li>
-              <a href="{{ nav_item.url | relative_url }}" 
-                 {% if page.url == nav_item.url %}class="active"{% endif %}>
-                {{ nav_item.name }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+      <div class="header-right">
+        <nav class="site-navigation">
+          <ul class="site-nav">
+            {% for nav_item in site.navigation %}
+              <li>
+                <a href="{{ nav_item.url | relative_url }}" 
+                   {% if page.url == nav_item.url %}class="active"{% endif %}>
+                  {{ nav_item.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        
+        <div class="theme-toggles">
+          <button class="theme-toggle" id="theme-light" title="Mode normal">
+            ☀️
+          </button>
+          <button class="theme-toggle" id="theme-dark" title="Mode sombre">
+            🌙
+          </button>
+          <button class="theme-toggle" id="theme-accessible" title="Mode accessible">
+            ♿
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </header>

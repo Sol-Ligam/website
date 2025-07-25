@@ -1,0 +1,41 @@
+# Équipe Sol Ligam
+members:
+  - name: "Sophie Duperret"
+    role: "Fondatrice & Directrice"
+    bio: "Experte en développement durable et réduction d'impact carbone, Sophie accompagne les structures dans leur transition écologique depuis plus de 5 ans."
+    expertise:
+      - "Stratégie carbone"
+      - "Audit environnemental"
+      - "Événementiel durable"
+    
+  - name: "Équipe Sol Ligam"
+    role: "Consultants spécialisés"
+    bio: "Une équipe de consultants passionnés par l'écologie et experts dans l'accompagnement des structures vers la neutralité carbone."
+    expertise:
+      - "Calcul d'empreinte carbone"
+      - "Plans de réduction"
+      - "Suivi et mesure"
+
+# Histoire de l'entreprise
+story: |
+  Sol Ligam a été créée avec la conviction que chaque structure peut contribuer significativement à la lutte contre le changement climatique. 
+  
+  Notre mission est d'accompagner les organisations dans leur démarche de réduction d'impact carbone en proposant des outils concrets, 
+  mesurables et adaptés à leurs besoins spécifiques.
+  
+  Spécialisés dans le secteur événementiel, nous avons développé une expertise unique pour aider les organisateurs d'événements 
+  à mesurer et réduire leur empreinte carbone tout en préservant la qualité de leurs manifestations.
+
+# Valeurs
+values:
+  - title: "Durabilité"
+    description: "Nous croyons en un développement qui répond aux besoins du présent sans compromettre ceux des générations futures."
+    
+  - title: "Innovation"
+    description: "Nous développons constamment de nouveaux outils et méthodes pour faciliter la transition écologique."
+    
+  - title: "Transparence"
+    description: "Nos méthodes et données sont basées sur des standards scientifiques reconnus et partagés ouvertement."
+    
+  - title: "Accompagnement"
+    description: "Nous privilégions l'accompagnement personnalisé pour garantir le succès de vos démarches environnementales."

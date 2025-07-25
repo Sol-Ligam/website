@@ -1,17 +1,12 @@
 /* Sol Ligam Website - Eco-designed CSS */
 
-/* Color scheme inspired by the logo 
-   Based on observation of the logo colors in brand assets:
-   - Primary green/teal tones from the logo
-   - Professional dark theme for sustainability impression
-   - High contrast for accessibility
-*/
+/* Color scheme using Sol Ligam brand colors */
 :root {
-  /* Brand colors extracted from logo */
-  --primary-green: #2d5a3d;      /* Deep forest green from logo */
-  --secondary-green: #4a7c59;    /* Lighter green accent */
-  --accent-teal: #3d7c7c;        /* Teal accent from logo elements */
-  --light-green: #7ab88f;        /* Light green for highlights */
+  /* Brand colors specified by client */
+  --primary-green: #6a886c;      /* Darker green */
+  --secondary-green: #d6e197;    /* Light green */
+  --accent-teal: #ceeeed;        /* Light teal/cyan */
+  --light-green: #d6e197;        /* Light green for highlights */
   
   /* Neutral colors for readability */
   --text-dark: #1a1a1a;          /* Near black for main text */
@@ -34,6 +29,29 @@
   --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
+}
+
+/* Dark mode variables */
+:root[data-theme="dark"] {
+  --text-dark: #ffffff;
+  --text-light: #1a1a1a;
+  --text-muted: #cccccc;
+  --background-light: #1a1a1a;
+  --background-white: #2d2d2d;
+  --border-light: #404040;
+  --primary-green: #8bb89c;      /* Lighter version for dark mode */
+}
+
+/* Accessibility mode variables */
+:root[data-theme="accessible"] {
+  --primary-green: #000000;      /* High contrast black */
+  --secondary-green: #000000;    /* High contrast black */
+  --accent-teal: #000000;        /* High contrast black */
+  --text-dark: #000000;          /* Pure black text */
+  --text-light: #ffffff;         /* Pure white text */
+  --background-light: #ffffff;   /* Pure white background */
+  --background-white: #ffffff;   /* Pure white background */
+  --border-light: #000000;       /* Black borders */
 }
 
 /* Reset and base styles */
@@ -124,8 +142,41 @@ a:hover {
   padding: 1rem 0;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggles {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+  color: var(--text-dark);
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-teal);
+  border-color: var(--primary-green);
+}
+
+.theme-toggle.active {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  border-color: var(--primary-green);
+}
+
 .site-logo {
-  height: 50px;
+  height: 60px;  /* Increased from 50px */
   width: auto;
 }
 
@@ -239,9 +290,9 @@ a:hover {
 
 /* Footer */
 .site-footer {
-  background-color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-teal));
   color: var(--text-light);
-  padding: 2rem 0;
+  padding: 3rem 0 1rem;
   margin-top: 4rem;
 }
 
@@ -249,14 +300,59 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  margin-top: 2rem; 
+  padding-top: 2rem; 
+  border-top: 1px solid rgba(255,255,255,0.2); 
+  text-align: center;
 }
 
 .site-footer a {
   color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .site-footer a:hover {
-  color: var(--light-green);
+  color: var(--secondary-green);
+  text-decoration: underline;
+}
+
+/* Social links in footer */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.1);
+  transition: background-color var(--transition-fast);
+}
+
+.social-links a:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 
 /* Responsive design */
@@ -266,8 +362,24 @@ a:hover {
     gap: 1rem;
   }
   
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
   .site-nav {
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .theme-toggles {
+    gap: 0.25rem;
+  }
+  
+  .theme-toggle {
+    padding: 0.4rem;
+    font-size: 1rem;
   }
   
   .hero h1 {
@@ -280,6 +392,25 @@ a:hover {
   
   .container {
     padding: 0 0.5rem;
+  }
+  
+  /* Stack buttons vertically on mobile */
+  .hero .btn {
+    display: block;
+    margin: 0.5rem auto !important;
+    max-width: 250px;
+  }
+  
+  /* Make cards stack better on mobile */
+  .card {
+    padding: 1.5rem;
+  }
+  
+  /* Improve footer on mobile */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
   }
 }
 

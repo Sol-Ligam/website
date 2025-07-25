@@ -54,6 +54,8 @@ company:
 navigation:
   - name: "Accueil"
     url: "/"
+  - name: "À propos"
+    url: "/a-propos/"
   - name: "Nos projets"
     url: "/projets/"
   - name: "Outils"

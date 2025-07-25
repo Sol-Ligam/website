@@ -20,6 +20,22 @@
   
   <!-- Preload critical resources -->
   <link rel="preload" href="{{ '/images/brand/logo.webp' | relative_url }}" as="image">
+  
+  <!-- Matomo Analytics -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://matomo.duperret.eu/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '5']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </head>
 <body>
   {% include header.html %}
@@ -30,13 +46,47 @@
   
   {% include footer.html %}
   
-  <!-- Minimal JavaScript for eco-design -->
+  <!-- Theme switching and site functionality -->
   <script>
-    // Update copyright year
     document.addEventListener('DOMContentLoaded', function() {
+      // Update copyright year
       const yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+      }
+      
+      // Theme switching functionality
+      const themeButtons = {
+        'theme-light': 'light',
+        'theme-dark': 'dark', 
+        'theme-accessible': 'accessible'
+      };
+      
+      // Load saved theme
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateActiveButton(savedTheme);
+      
+      // Add click listeners to theme buttons
+      Object.keys(themeButtons).forEach(buttonId => {
+        const button = document.getElementById(buttonId);
+        if (button) {
+          button.addEventListener('click', () => {
+            const theme = themeButtons[buttonId];
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateActiveButton(theme);
+          });
+        }
+      });
+      
+      function updateActiveButton(activeTheme) {
+        Object.keys(themeButtons).forEach(buttonId => {
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.classList.toggle('active', themeButtons[buttonId] === activeTheme);
+          }
+        });
       }
     });
   </script>
