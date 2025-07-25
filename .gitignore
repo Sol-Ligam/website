@@ -1,2 +1,30 @@
 .idea/*
 .vscode/*
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundle
+vendor/
+.bundle/
+Gemfile.lock
+
+# Node.js (if used)
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/

@@ -30,6 +30,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - .git/
+  - .gitignore
 
 # Site settings
 lang: fr
