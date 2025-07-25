@@ -1,39 +1,106 @@
-<!DOCTYPE html>
-<html lang="fr">
+---
+layout: default
+title: "Accompagnement pour la réduction de l'impact carbone"
+description: "Sol Ligam accompagne les structures pour diminuer leur impact carbone, notamment en événementiel. Découvrez notre simulateur gratuit."
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sol Ligam - En cours de construction</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles-mobile.css">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-</head>
-
-<body>
-    <div id="particles-js"></div>
-
-    <!-- <a href="https://commun.solligam.fr" class="button top-right-btn">Connexion</a> -->
-    <a href="/" class="button top-right-btn-2">Accueil</a>
-    <div class="container">
-        <img src="/images/brand/logo.webp" alt="Logo" class="logo">
-        <p>Site en cours de construction</p>
-        <br>
-        <a href="mailto:contact@solligam.fr" class="button border-btn">Contactez-nous</a>
-        <br>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+    <p>Nous accompagnons les structures dans leur démarche de réduction de l'impact carbone, particulièrement dans le secteur événementiel.</p>
+    
+    <div style="margin-top: 2rem;">
+      <a href="{{ site.company.carbon_simulator }}" class="btn btn-primary" target="_blank" rel="noopener">
+        Simulateur gratuit
+      </a>
+      <a href="#about" class="btn btn-outline" style="margin-left: 1rem;">
+        En savoir plus
+      </a>
     </div>
+  </div>
+</section>
 
-    <footer>
-        &copy; 2025-<span id="current-year"></span> SAS Sol Ligam - <a href="/mentions-legales">Mentions légales</a>
-    </footer>
-    <script src="js/footerYear.js" defer></script>
+<!-- Citation Section -->
+<section class="section">
+  <div class="container">
+    <div class="quote">
+      <p>"L'avenir appartient à ceux qui comprennent que la durabilité n'est pas une contrainte, mais une opportunité d'innovation et de croissance responsable."</p>
+      <div class="quote-author">— Équipe Sol Ligam</div>
+    </div>
+  </div>
+</section>
 
-    <script src="js/particles-init.js"></script>
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="card">
+        <h3>🌱 Notre mission</h3>
+        <p>Accompagner les structures dans leur transition écologique en proposant des solutions concrètes et mesurables pour réduire leur impact carbone.</p>
+      </div>
+      
+      <div class="card">
+        <h3>📊 Notre expertise</h3>
+        <p>Nous avons développé un simulateur avec des données fiables pour calculer et suivre l'empreinte carbone de vos événements et activités.</p>
+      </div>
+      
+      <div class="card">
+        <h3>🎯 Notre approche</h3>
+        <p>Une méthodologie éprouvée basée sur des données scientifiques pour vous accompagner dans vos démarches de décarbonation.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-</body>
+<!-- Services Section -->
+<section class="section" style="background-color: var(--background-white);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h2>Nos services</h2>
+      <p>Des solutions adaptées à vos besoins de décarbonation</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      <div class="card" style="text-align: center;">
+        <h4>Audit carbone</h4>
+        <p>Évaluation complète de votre empreinte carbone actuelle</p>
+        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+      </div>
+      
+      <div class="card" style="text-align: center;">
+        <h4>Stratégie de réduction</h4>
+        <p>Plan d'action personnalisé pour diminuer vos émissions</p>
+        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+      </div>
+      
+      <div class="card" style="text-align: center;">
+        <h4>Suivi et mesure</h4>
+        <p>Outils de monitoring pour évaluer vos progrès</p>
+        <a href="{{ site.company.carbon_simulator }}" class="btn btn-primary" target="_blank">Simulateur gratuit</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-</html>
+<!-- Contact Section -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2>Commençons ensemble</h2>
+      <p>Prêt à réduire votre impact carbone ? Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous accompagner.</p>
+      
+      <div style="margin-top: 2rem;">
+        <a href="mailto:{{ site.social.email }}" class="btn btn-primary">
+          Contactez-nous
+        </a>
+      </div>
+      
+      <div style="margin-top: 2rem; padding: 1.5rem; background-color: var(--background-white); border-radius: var(--border-radius);">
+        <p><strong>{{ site.social.email }}</strong></p>
+        <p>{{ site.company.address }}</p>
+      </div>
+    </div>
+  </div>
+</section>

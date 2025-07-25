@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="{{ '/' | relative_url }}" class="logo-link">
+        <img src="{{ '/images/brand/logo.webp' | relative_url }}" alt="{{ site.title }}" class="site-logo">
+      </a>
+      
+      <nav class="site-navigation">
+        <ul class="site-nav">
+          {% for nav_item in site.navigation %}
+            <li>
+              <a href="{{ nav_item.url | relative_url }}" 
+                 {% if page.url == nav_item.url %}class="active"{% endif %}>
+                {{ nav_item.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
