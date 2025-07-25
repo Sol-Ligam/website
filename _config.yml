@@ -54,12 +54,12 @@ company:
 navigation:
   - name: "Accueil"
     url: "/"
-  - name: "À propos"
-    url: "/a-propos/"
   - name: "Nos projets"
     url: "/projets/"
   - name: "Outils"
     url: "/outils/"
+  - name: "À propos"
+    url: "/a-propos/"
   - name: "Contact"
     url: "/contact/"
 

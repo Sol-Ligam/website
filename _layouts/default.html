@@ -56,37 +56,58 @@
       }
       
       // Theme switching functionality
-      const themeButtons = {
-        'theme-light': 'light',
-        'theme-dark': 'dark', 
-        'theme-accessible': 'accessible'
-      };
+      const themeToggle = document.getElementById('theme-toggle');
+      const accessibilityToggle = document.getElementById('accessibility-toggle');
       
-      // Load saved theme
+      // Load saved themes
       const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateActiveButton(savedTheme);
+      const savedAccessible = localStorage.getItem('accessible') === 'true';
       
-      // Add click listeners to theme buttons
-      Object.keys(themeButtons).forEach(buttonId => {
-        const button = document.getElementById(buttonId);
-        if (button) {
-          button.addEventListener('click', () => {
-            const theme = themeButtons[buttonId];
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            updateActiveButton(theme);
-          });
-        }
-      });
+      // Apply saved settings
+      document.documentElement.setAttribute('data-theme', savedAccessible ? 'accessible' : savedTheme);
+      updateToggleStates(savedTheme, savedAccessible);
       
-      function updateActiveButton(activeTheme) {
-        Object.keys(themeButtons).forEach(buttonId => {
-          const button = document.getElementById(buttonId);
-          if (button) {
-            button.classList.toggle('active', themeButtons[buttonId] === activeTheme);
-          }
+      // Theme toggle (light/dark)
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          const isAccessible = localStorage.getItem('accessible') === 'true';
+          
+          localStorage.setItem('theme', newTheme);
+          document.documentElement.setAttribute('data-theme', isAccessible ? 'accessible' : newTheme);
+          updateToggleStates(newTheme, isAccessible);
         });
+      }
+      
+      // Accessibility toggle
+      if (accessibilityToggle) {
+        accessibilityToggle.addEventListener('click', () => {
+          const isAccessible = localStorage.getItem('accessible') === 'true';
+          const newAccessible = !isAccessible;
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          
+          localStorage.setItem('accessible', newAccessible.toString());
+          document.documentElement.setAttribute('data-theme', newAccessible ? 'accessible' : currentTheme);
+          updateToggleStates(currentTheme, newAccessible);
+        });
+      }
+      
+      function updateToggleStates(theme, accessible) {
+        // Update theme toggle icon
+        if (themeToggle) {
+          const themeIcon = themeToggle.querySelector('.theme-icon');
+          if (themeIcon) {
+            themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
+            themeToggle.title = theme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair';
+          }
+        }
+        
+        // Update accessibility toggle state
+        if (accessibilityToggle) {
+          accessibilityToggle.classList.toggle('active', accessible);
+          accessibilityToggle.title = accessible ? 'Désactiver le mode accessible' : 'Activer le mode accessible';
+        }
       }
     });
   </script>
