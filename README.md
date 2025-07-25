@@ -4,7 +4,7 @@ Site web officiel de Sol Ligam, société d'accompagnement pour la réduction de
 
 ## À propos de Sol Ligam
 
-Sol Ligam accompagne les structures pour diminuer leur impact carbone, notamment dans l'événementiel. 
+Sol Ligam accompagne les structures pour diminuer leur impact carbone, notamment dans l'événementiel.  
 Nous avons développé un simulateur gratuit avec des données fiables, accessible sur [monbilancarbone.solligam.fr](https://monbilancarbone.solligam.fr).
 
 ## Technologies
@@ -54,13 +54,26 @@ Le site est conçu avec des principes d'éco-design :
 - JavaScript minimal
 - Génération statique pour des performances optimales
 
-## Déploiement
+## Déploiement automatique
 
-Le site est automatiquement déployé sur GitHub Pages à chaque push sur la branche principale.
+Le site est déployé automatiquement sur GitHub Pages à chaque push sur la branche `main` grâce au workflow GitHub Actions :
+
+- **Workflow** : `.github/workflows/deploy.yml`
+- **Branche de déploiement** : `main`
+- **Domaine personnalisé** : `solligam.fr` (voir fichier `CNAME`)
+- **Aucune action manuelle requise** : le déploiement est géré par GitHub Actions
+
+### Points à vérifier si le déploiement ne fonctionne pas
+
+1. **Push sur la branche `main`**  
+2. **Configuration du domaine** : DNS du domaine `solligam.fr` doit pointer vers GitHub Pages  
+3. **Configuration GitHub Pages** : Source = "GitHub Actions" dans les paramètres du dépôt  
+4. **Vérification des logs du workflow** : Onglet Actions sur GitHub  
+5. **Validité du build Jekyll** : Pas d'erreur dans `_config.yml`, collections, plugins, etc.
 
 ## Contact
 
 contact@solligam.fr
 
 ---
-© 2025 SAS Sol Ligam - Tous droits réservés.
+© 2025 SAS Sol Ligam
