@@ -5,7 +5,14 @@
         <img src="{{ '/images/brand/logo.webp' | relative_url }}" alt="{{ site.title }}" class="site-logo">
       </a>
       
-      <div class="header-right">
+      <!-- Mobile burger menu button -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      
+      <div class="header-right" id="header-right">
         <nav class="site-navigation">
           <ul class="site-nav">
             {% for nav_item in site.navigation %}
