@@ -70,3 +70,38 @@ navigation:
 # SEO
 seo:
   type: "Organization"
+  name: "Sol Ligam"
+  links:
+    - "https://www.instagram.com/sol_ligam/"
+    - "https://www.linkedin.com/company/sol-ligam/"
+  logo: "/images/brand/logo.webp"
+
+# Open Graph / Social Media
+og_image: "/images/brand/logo.webp"
+twitter:
+  card: "summary_large_image"
+  site: "@sol_ligam"
+
+# Additional SEO settings
+webmaster_verifications:
+  google: ""
+  bing: ""
+  
+# Structured data
+organization:
+  name: "SAS Sol Ligam"
+  legal_name: "SAS Sol Ligam" 
+  description: "Accompagnement pour la réduction de l'impact carbone"
+  url: "https://solligam.fr"
+  logo: "https://solligam.fr/images/brand/logo.webp"
+  address:
+    street_address: "215 cours du maréchal gallieni"
+    locality: "Bordeaux"
+    postal_code: "33000"
+    country: "FR"
+  contact_point:
+    type: "customer service"
+    email: "contact@solligam.fr"
+  same_as:
+    - "https://www.instagram.com/sol_ligam/"
+    - "https://www.linkedin.com/company/sol-ligam/"
