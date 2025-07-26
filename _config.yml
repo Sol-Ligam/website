@@ -58,10 +58,10 @@ company:
 navigation:
   - name: "Accueil"
     url: "/"
-  - name: "Nos projets"
-    url: "/projets/"
   - name: "Outils"
     url: "/outils/"
+  - name: "Nos projets"
+    url: "/projets/"
   - name: "À propos"
     url: "/a-propos/"
   - name: "Contact"
