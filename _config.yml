@@ -20,6 +20,10 @@ collections:
     output: true
     permalink: /:collection/:name/
 
+# Include in processing
+include:
+  - .well-known
+
 # Exclude from processing
 exclude:
   - archive/
