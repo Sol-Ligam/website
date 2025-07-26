@@ -55,6 +55,34 @@
         yearElement.textContent = new Date().getFullYear();
       }
       
+      // Mobile menu functionality
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const headerRight = document.getElementById('header-right');
+      
+      if (mobileMenuToggle && headerRight) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          headerRight.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a navigation link
+        const navLinks = headerRight.querySelectorAll('.site-nav a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            headerRight.classList.remove('active');
+          });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!mobileMenuToggle.contains(event.target) && !headerRight.contains(event.target)) {
+            mobileMenuToggle.classList.remove('active');
+            headerRight.classList.remove('active');
+          }
+        });
+      }
+      
       // Theme switching functionality
       const themeToggle = document.getElementById('theme-toggle');
       const accessibilityToggle = document.getElementById('accessibility-toggle');
