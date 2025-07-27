@@ -101,18 +101,24 @@ description: "Sol Ligam accompagne les structures pour diminuer leur impact carb
       </div>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 720px; margin: 0 auto;">
-        <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center;">
-          <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">📧 Email</h4>
-          <p style="margin: 0; color: var(--text-dark);">{{ site.social.email }}</p>
-        </div>
-        <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center;">
-          <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">📷 Instagram</h4>
-          <p style="margin: 0;"><a href="{{ site.social.instagram }}" style="color: var(--text-dark); text-decoration: none;" target="_blank">@sol_ligam</a></p>
-        </div>
-        <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center;">
-          <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">💼 LinkedIn</h4>
-          <p style="margin: 0;"><a href="{{ site.social.linkedin }}" style="color: var(--text-dark); text-decoration: none;" target="_blank">Sol Ligam</a></p>
-        </div>
+        <a href="mailto:{{ site.social.email }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-light)'">
+          <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center; height: 100%;">
+            <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">📧 Email</h4>
+            <p style="margin: 0; color: var(--text-dark);">{{ site.social.email }}</p>
+          </div>
+        </a>
+        <a href="{{ site.social.instagram }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;" target="_blank" rel="noopener" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-light)'">
+          <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center; height: 100%;">
+            <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">📷 Instagram</h4>
+            <p style="margin: 0; color: var(--text-dark);">@sol_ligam</p>
+          </div>
+        </a>
+        <a href="{{ site.social.linkedin }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease, box-shadow 0.2s ease;" target="_blank" rel="noopener" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-light)'">
+          <div style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-light); text-align: center; height: 100%;">
+            <h4 style="color: var(--primary-green); margin-bottom: 0.75rem;">💼 LinkedIn</h4>
+            <p style="margin: 0; color: var(--text-dark);">Sol Ligam</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>

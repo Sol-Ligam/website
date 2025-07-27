@@ -18,8 +18,78 @@
   <!-- SEO and Social -->
   {% seo %}
   
+  <!-- Enhanced Open Graph Tags -->
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="fr_FR">
+  {% if page.url == "/" %}
+  <meta property="og:type" content="website">
+  {% else %}
+  <meta property="og:type" content="article">
+  {% endif %}
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:creator" content="@sol_ligam">
+  
+  <!-- Additional SEO Meta -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.organization.name }}",
+    "legalName": "{{ site.organization.legal_name }}",
+    "description": "{{ site.organization.description }}",
+    "url": "{{ site.organization.url }}",
+    "logo": "{{ site.organization.logo }}",
+    "email": "{{ site.organization.contact_point.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.organization.address.street_address }}",
+      "addressLocality": "{{ site.organization.address.locality }}",
+      "postalCode": "{{ site.organization.address.postal_code }}",
+      "addressCountry": "{{ site.organization.address.country }}"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "{{ site.organization.contact_point.type }}",
+      "email": "{{ site.organization.contact_point.email }}"
+    },
+    "sameAs": {{ site.organization.same_as | jsonify }}
+  }
+  </script>
+  
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.organization.name }}",
+      "logo": "{{ site.organization.logo }}"
+    }
+  }
+  </script>
+  {% endif %}
+  
   <!-- Preload critical resources -->
   <link rel="preload" href="{{ '/images/brand/logo.webp' | relative_url }}" as="image">
+  <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
+  
+  <!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//matomo.duperret.eu">
+  
+  <!-- Preconnect for critical third-party origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Matomo Analytics -->
   <script>
