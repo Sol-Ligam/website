@@ -705,3 +705,18 @@ a:hover {
     background: white;
   }
 }
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card.text-center {
+  text-align: center;
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, var(--primary-green), var(--text-dark));
+  color: var(--text-light);
+}

@@ -31,9 +31,9 @@ permalink: /a-propos/
       <p>Les principes qui guident notre action quotidienne</p>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+    <div class="grid-auto">
       {% for value in site.data.a-propos.values %}
-        <div class="card" style="text-align: center;">
+        <div class="card text-center">
           <h4>{{ value.title }}</h4>
           <p>{{ value.description }}</p>
         </div>
@@ -86,7 +86,7 @@ permalink: /a-propos/
         <a href="/contact/" class="btn" style="background-color: var(--text-light); color: var(--primary-green); margin-right: 1rem;">
           Nous contacter
         </a>
-        <a href="{{ site.company.carbon_simulator }}" class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-light);" target="_blank">
+        <a class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-light);" target="_blank">
           Simulateur gratuit
         </a>
       </div>
