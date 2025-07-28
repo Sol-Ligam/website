@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "À propos de nous"
 description: "Découvrez l'équipe Sol Ligam et notre mission pour accompagner la réduction de l'impact carbone."
 permalink: /a-propos/
@@ -9,16 +9,16 @@ permalink: /a-propos/
 <section class="hero">
   <div class="container">
     <h1>À propos de Sol Ligam</h1>
-    <p>Une équipe passionnée au service de la transition écologique</p>
+    <p>Découvrez l'équipe derrière Sol Ligam et notre mission pour accompagner la réduction de l'impact carbone.</p>
   </div>
 </section>
 
 <!-- Story Section -->
 <section class="section">
   <div class="container">
-    <div style="max-width: 800px; margin: 0 auto;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
       <h2>Notre histoire</h2>
-      {{ site.data.team.story | markdownify }}
+      {{ site.data.a-propos.story | markdownify }}
     </div>
   </div>
 </section>
@@ -32,7 +32,7 @@ permalink: /a-propos/
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-      {% for value in site.data.team.values %}
+      {% for value in site.data.a-propos.values %}
         <div class="card" style="text-align: center;">
           <h4>{{ value.title }}</h4>
           <p>{{ value.description }}</p>
@@ -51,7 +51,7 @@ permalink: /a-propos/
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      {% for member in site.data.team.members %}
+      {% for member in site.data.a-propos.members %}
         <div class="card team-member-card">
           <div>
             <h3>{{ member.name }}</h3>
