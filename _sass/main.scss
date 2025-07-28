@@ -78,6 +78,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--primary-green);
@@ -165,9 +170,9 @@ a:hover {
 
 .theme-toggle {
   background: none;
-  border: 1px solid var(--border-light);
+  border: none; // Suppression de la bordure
   border-radius: var(--border-radius);
-  padding: 0.5rem 0.75rem; /* Better padding for integration */
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
   font-size: 1.1rem;
   transition: all var(--transition-fast);
@@ -227,6 +232,7 @@ a:hover {
   min-height: 320px;
   display: flex;
   align-items: center;
+  box-sizing: border-box; // Ajouté pour éviter tout débordement
 }
 
 :root[data-theme="dark"] .hero {
