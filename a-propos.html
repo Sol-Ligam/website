@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "À propos de nous"
 description: "Découvrez l'équipe Sol Ligam et notre mission pour accompagner la réduction de l'impact carbone."
 permalink: /a-propos/
@@ -9,16 +9,16 @@ permalink: /a-propos/
 <section class="hero">
   <div class="container">
     <h1>À propos de Sol Ligam</h1>
-    <p>Une équipe passionnée au service de la transition écologique</p>
+    <p>Découvrez l'équipe derrière Sol Ligam et notre mission pour accompagner la réduction de l'impact carbone.</p>
   </div>
 </section>
 
 <!-- Story Section -->
 <section class="section">
   <div class="container">
-    <div style="max-width: 800px; margin: 0 auto;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
       <h2>Notre histoire</h2>
-      {{ site.data.team.story | markdownify }}
+      {{ site.data.a-propos.story | markdownify }}
     </div>
   </div>
 </section>
@@ -31,9 +31,9 @@ permalink: /a-propos/
       <p>Les principes qui guident notre action quotidienne</p>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-      {% for value in site.data.team.values %}
-        <div class="card" style="text-align: center;">
+    <div class="grid-auto">
+      {% for value in site.data.a-propos.values %}
+        <div class="card text-center">
           <h4>{{ value.title }}</h4>
           <p>{{ value.description }}</p>
         </div>
@@ -51,18 +51,20 @@ permalink: /a-propos/
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      {% for member in site.data.team.members %}
-        <div class="card">
-          <h3>{{ member.name }}</h3>
-          <p style="color: var(--primary-green); font-weight: 500; margin-bottom: 1rem;">{{ member.role }}</p>
-          <p>{{ member.bio }}</p>
+      {% for member in site.data.a-propos.members %}
+        <div class="card team-member-card">
+          <div>
+            <h3>{{ member.name }}</h3>
+            <p style="color: var(--primary-green); font-weight: 500; margin-bottom: 1rem;">{{ member.role }}</p>
+            <p>{{ member.bio }}</p>
+          </div>
           
           {% if member.expertise %}
-            <div style="margin-top: 1.5rem;">
+            <div class="team-member-expertise">
               <strong>Expertises :</strong>
               <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
                 {% for skill in member.expertise %}
-                  <li style="display: inline-block; background-color: var(--accent-teal); color: var(--text-dark); padding: 0.25rem 0.75rem; border-radius: var(--border-radius); margin: 0.25rem 0.25rem 0.25rem 0; font-size: 0.9rem;">{{ skill }}</li>
+                  <li class="expertise-tag">{{ skill }}</li>
                 {% endfor %}
               </ul>
             </div>
@@ -84,7 +86,7 @@ permalink: /a-propos/
         <a href="/contact/" class="btn" style="background-color: var(--text-light); color: var(--primary-green); margin-right: 1rem;">
           Nous contacter
         </a>
-        <a href="{{ site.company.carbon_simulator }}" class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-light);" target="_blank">
+        <a class="btn btn-outline" style="border-color: var(--text-light); color: var(--text-light);" target="_blank">
           Simulateur gratuit
         </a>
       </div>

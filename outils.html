@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Outils"
 description: "Accédez à nos outils professionnels de calcul et suivi d'impact carbone."
 permalink: /outils/
@@ -8,8 +8,9 @@ permalink: /outils/
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <h1>Nos outils</h1>
+    <h1>Outils</h1>
     <p>Nous accompagnons les structures dans leur démarche de réduction de l'impact carbone, particulièrement dans le secteur événementiel.</p>
+    <p>{{ site.description }}</p>
     
     <div style="margin-top: 2rem;">
       <a href="{{ site.company.carbon_simulator }}" class="btn" style="background-color: var(--text-light); color: var(--primary-green); margin-right: 1rem;" target="_blank">
@@ -25,7 +26,7 @@ permalink: /outils/
 <div class="section">
   <div class="container">
     <!-- Free tool section -->
-    <div class="card" style="margin-bottom: 3rem;">
+    <div class="card" style="margin-bottom: 3rem; text-align: center;">
       <h3>🆓 Outil gratuit</h3>
       <p>Notre simulateur carbone est accessible gratuitement pour tous. Calculez l'empreinte carbone de vos événements en quelques minutes avec des données fiables.</p>
       <a href="{{ site.company.carbon_simulator }}" class="btn btn-primary" target="_blank" rel="noopener">
@@ -61,7 +62,7 @@ permalink: /outils/
       </div>
       
       <!-- Paywall section -->
-      <div style="margin-top: 2rem; padding: 2rem; background-color: rgba(255,255,255,0.2); border-radius: var(--border-radius); border: 2px solid rgba(255,255,255,0.3);">
+      <div class="paywall-section" style="margin-top: 2rem; padding: 2rem; background-color: rgba(255,255,255,0.2); border-radius: var(--border-radius); border: 2px solid rgba(255,255,255,0.3);">
         <h4 style="color: var(--text-light); margin-bottom: 1rem;">🔐 Connexion client requise</h4>
         <p>Ces outils avancés sont exclusivement réservés à nos clients accompagnés. Si vous êtes déjà client, connectez-vous pour accéder à votre espace personnalisé.</p>
         
