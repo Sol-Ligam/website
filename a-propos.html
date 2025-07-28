@@ -52,17 +52,19 @@ permalink: /a-propos/
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
       {% for member in site.data.team.members %}
-        <div class="card">
-          <h3>{{ member.name }}</h3>
-          <p style="color: var(--primary-green); font-weight: 500; margin-bottom: 1rem;">{{ member.role }}</p>
-          <p>{{ member.bio }}</p>
+        <div class="card team-member-card">
+          <div>
+            <h3>{{ member.name }}</h3>
+            <p style="color: var(--primary-green); font-weight: 500; margin-bottom: 1rem;">{{ member.role }}</p>
+            <p>{{ member.bio }}</p>
+          </div>
           
           {% if member.expertise %}
-            <div style="margin-top: 1.5rem;">
+            <div class="team-member-expertise">
               <strong>Expertises :</strong>
               <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
                 {% for skill in member.expertise %}
-                  <li style="display: inline-block; background-color: var(--accent-teal); color: var(--text-dark); padding: 0.25rem 0.75rem; border-radius: var(--border-radius); margin: 0.25rem 0.25rem 0.25rem 0; font-size: 0.9rem;">{{ skill }}</li>
+                  <li class="expertise-tag">{{ skill }}</li>
                 {% endfor %}
               </ul>
             </div>

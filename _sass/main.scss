@@ -146,7 +146,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem 0; /* Minimal padding for very thin navbar */
+  padding: 0.15rem 0; /* Reduced padding for thinner navbar */
 }
 
 .header-right {
@@ -345,6 +345,41 @@ a:hover {
 :root[data-theme="dark"] .site-footer {
   background: linear-gradient(135deg, #1f2937, #111827);
   border-top: 1px solid var(--border-light);
+  color: #9ca3af; /* text-gray-400 equivalent */
+}
+
+/* Dark mode paywall styling */
+:root[data-theme="dark"] .paywall-section {
+  background-color: rgba(0,0,0,0.4) !important;
+}
+
+/* Expertise tags styling */
+.expertise-tag {
+  display: inline-block;
+  background-color: var(--accent-teal);
+  color: var(--text-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius);
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Dark mode expertise tags */
+:root[data-theme="dark"] .expertise-tag {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+}
+
+/* Ensure expertise sections have consistent height */
+.team-member-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.team-member-expertise {
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 .footer-content {
@@ -452,7 +487,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem 0;
+    padding: 0.1rem 0; /* Reduced padding for mobile too */
     position: relative;
   }
   
