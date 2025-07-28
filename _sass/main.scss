@@ -36,10 +36,10 @@
   --text-dark: #ffffff;
   --text-light: #1a1a1a;
   --text-muted: #cccccc;
-  --background-light: #1a1a1a;
-  --background-white: #2d2d2d;
-  --border-light: #404040;
-  --primary-green: #8bb89c;      /* Lighter version for dark mode */
+  --background-light: #111827;    /* Updated to match tool specification: rgb(17, 24, 39) */
+  --background-white: #1f2937;    /* Slightly lighter shade for cards/sections */
+  --border-light: #374151;        /* Updated border color for better contrast */
+  --primary-green: #8bb89c;       /* Lighter version for dark mode */
 }
 
 /* Accessibility mode variables */
@@ -309,6 +309,13 @@ a:hover {
   box-shadow: var(--shadow-medium);
 }
 
+/* Contact section card backgrounds for dark mode */
+:root[data-theme="dark"] #contact .card,
+:root[data-theme="dark"] .contact-section .card {
+  background-color: var(--background-white);
+  border: 1px solid var(--border-light);
+}
+
 /* Quote/Citation */
 .quote {
   background-color: var(--background-white);
@@ -332,6 +339,12 @@ a:hover {
   color: var(--text-light);
   padding: 3rem 0 1rem;
   margin-top: 4rem;
+}
+
+/* Dark mode footer styling */
+:root[data-theme="dark"] .site-footer {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border-top: 1px solid var(--border-light);
 }
 
 .footer-content {
