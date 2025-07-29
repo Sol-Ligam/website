@@ -60,7 +60,7 @@ navigation:
     url: "/"
   - name: "Outils"
     url: "/outils/"
-  - name: "Nos projets"
+  - name: "Projets"
     url: "/projets/"
   - name: "À propos"
     url: "/a-propos/"
