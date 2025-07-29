@@ -22,10 +22,10 @@ permalink: /projets/
         {% for project in site.projects %}
           <div class="card">
             <h3>{{ project.title }}</h3>
-            <p><strong>Secteur:</strong> {{ project.sector }}</p>
-            <p><strong>Réduction d'émissions:</strong> {{ project.reduction }}</p>
+            <p><strong>Secteur :</strong> {{ project.sector }}</p>
+            <p><strong>Réduction d'émissions :</strong> {{ project.reduction }}</p>
             <p>{{ project.description }}</p>
-            
+
             {% if project.results %}
               <div style="margin-top: 1rem; padding: 1rem; background-color: var(--background-light); border-radius: var(--border-radius);">
                 <h4>Résultats</h4>
@@ -35,6 +35,14 @@ permalink: /projets/
                   {% endfor %}
                 </ul>
               </div>
+            {% endif %}
+
+            {% if project.website %}
+              <p style="margin: 1rem 0 0 0; text-align: right;">
+                <a href="{{ project.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  Site web du projet
+                </a>
+              </p>
             {% endif %}
           </div>
         {% endfor %}
