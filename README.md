@@ -16,19 +16,15 @@ Nous avons développé un simulateur gratuit avec des données fiables, accessib
 ## Structure du site
 
 - **Page d'accueil** : Présentation de Sol Ligam avec interface professionnelle
-- **Nos projets** : Présentation des projets d'accompagnement (mise à jour via collection Jekyll)
+- **Projets** : Présentation des projets d'accompagnement (mise à jour via collection Jekyll)
 - **Outils** : Simulateur gratuit + outils avancés pour clients
 - **Mentions légales** : Informations légales obligatoires
 
 ## Développement local
 
 ```bash
-# Installation des dépendances Jekyll
 bundle install
-
-# Lancement du serveur de développement
 bundle exec jekyll serve
-
 # Le site sera accessible sur http://localhost:4000
 ```
 
