@@ -12,8 +12,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}">
   
-  <!-- Styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Styles with cache-friendly versioning -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   
   <!-- SEO and Social -->
   {% seo %}
@@ -79,9 +79,13 @@
   </script>
   {% endif %}
   
-  <!-- Preload critical resources -->
-  <link rel="preload" href="{{ '/images/brand/logo.webp' | relative_url }}" as="image">
-  <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
+  <!-- Cache optimization meta tags -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" data-turbo-track="false">
+  <meta http-equiv="Expires" content="{{ site.time | date: '%a, %d %b %Y %H:%M:%S GMT' | date: '%s' | plus: 31536000 | date: '%a, %d %b %Y %H:%M:%S GMT' }}">
+  
+  <!-- Preload critical resources with cache-friendly versioning -->
+  <link rel="preload" href="{{ '/images/brand/logo.webp' | relative_url }}?v={{ site.time | date: '%s' }}" as="image">
+  <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}" as="style">
   
   <!-- DNS Prefetch for external resources -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -106,6 +110,21 @@
     })();
   </script>
   <!-- End Matomo Code -->
+  
+  <!-- Service Worker Registration for efficient caching -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('Service Worker registered successfully:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
 </head>
 <body>
   {% include header.html %}

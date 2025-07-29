@@ -1,12 +1,12 @@
 # Équipe Sol Ligam
 members:
-  - name: "Sophie Duperret"
-    role: "Fondatrice & Directrice"
-    bio: "Experte en développement durable et réduction d'impact carbone, Sophie accompagne les structures dans leur transition écologique depuis plus de 5 ans."
-    expertise:
-      - "Stratégie carbone"
-      - "Audit environnemental"
-      - "Événementiel durable"
+  # - name: "Sophie Duperret"
+  #   role: "Fondatrice & Directrice"
+  #   bio: "Experte en développement durable et réduction d'impact carbone, Sophie accompagne les structures dans leur transition écologique depuis plus de 5 ans."
+  #   expertise:
+  #     - "Stratégie carbone"
+  #     - "Audit environnemental"
+  #     - "Événementiel durable"
     
   - name: "Équipe Sol Ligam"
     role: "Consultants spécialisés"
