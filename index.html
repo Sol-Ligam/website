@@ -55,7 +55,7 @@ description: "Sol Ligam accompagne les structures pour diminuer leur impact carb
 </section>
 
 <!-- Services Section -->
-<section class="section" style="background-color: var(--background-white);">
+<section class="section section-services">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
       <h2>Nos services</h2>
@@ -63,19 +63,19 @@ description: "Sol Ligam accompagne les structures pour diminuer leur impact carb
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-      <div class="card" style="text-align: center;">
+      <div class="card" style="background: var(--background-white); color: var(--text-dark); text-align: center;">
         <h4>Audit carbone</h4>
         <p>Évaluation complète de votre empreinte carbone actuelle</p>
         <a href="#contact" class="btn btn-outline">En savoir plus</a>
       </div>
       
-      <div class="card" style="text-align: center;">
+      <div class="card" style="background: var(--background-white); color: var(--text-dark); text-align: center;">
         <h4>Stratégie de réduction</h4>
         <p>Plan d'action personnalisé pour diminuer vos émissions</p>
         <a href="#contact" class="btn btn-outline">En savoir plus</a>
       </div>
       
-      <div class="card" style="text-align: center;">
+      <div class="card" style="background: var(--background-white); color: var(--text-dark); text-align: center;">
         <h4>Suivi et mesure</h4>
         <p>Outils de monitoring pour évaluer vos progrès</p>
         <a href="{{ site.company.carbon_simulator }}" class="btn btn-primary" target="_blank">Simulateur gratuit</a>
@@ -85,20 +85,20 @@ description: "Sol Ligam accompagne les structures pour diminuer leur impact carb
 </section>
 
 <!-- Contact Section -->
-<section class="section" id="contact" style="background: linear-gradient(135deg, var(--accent-teal), var(--secondary-green)); color: var(--text-dark);">
+<section class="section section-contact" id="contact">
   <div class="container">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-      <h2 style="color: var(--primary-green); margin-bottom: 1.5rem;">Votre projet nous intéresse</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 2.5rem;">Chaque structure a ses propres défis en matière de réduction d'impact carbone. Parlons de votre projet et de la façon dont nous pouvons vous accompagner.</p>
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: var(--primary-green);">Votre projet nous intéresse</h2>
+      <p>Parlons de votre projet et trouvons ensemble la meilleure solution pour réduire votre impact carbone.</p>
       
-      <div style="margin-bottom: 3rem;">
-        <a href="/contact/" class="btn btn-primary" style="margin-right: 1rem; margin-bottom: 1rem; display: inline-block; min-width: 200px;">
+      <div style="margin-top: 2rem;">
+        <a href="/contact/" class="btn" style="background-color: var(--primary-green); color: var(--text-light); margin-right: 1rem;">
           Discutons de votre projet
         </a>
-        <a href="mailto:{{ site.social.email }}" class="btn btn-outline" style="border-color: var(--primary-green); color: var(--primary-green); display: inline-block; min-width: 200px;">
+        <a href="mailto:{{ site.social.email }}" class="btn btn-outline" style="border-color: var(--primary-green); color: var(--primary-green);">
           Email direct
         </a>
-      </div>
+      </div>    
     </div>
   </div>
 </section>

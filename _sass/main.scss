@@ -1,8 +1,5 @@
-/* Sol Ligam Website - Eco-designed CSS */
-
 /* Color scheme using Sol Ligam brand colors */
 :root {
-  /* Brand colors specified by client */
   --primary-green: #6a886c;      /* Darker green */
   --secondary-green: #d6e197;    /* Light green */
   --accent-teal: #ceeeed;        /* Light teal/cyan */
@@ -33,15 +30,16 @@
 
 /* Dark mode variables */
 :root[data-theme="dark"] {
+  --primary-green: #22372a;      /* Vert très sombre */
+  --secondary-green: #1a1a1a;    /* Presque noir */
+  --accent-teal: #2c3e3e;        /* Teal sombre */
   --text-dark: #ffffff;
   --text-light: #1a1a1a;
   --text-muted: #cccccc;
-  --background-light: #111827;    /* rgb(17, 24, 39) */
-  --background-white: #1f2937;    /* rgb(31, 41, 55) */
-  --border-light: #374151;
-  --primary-green: #8bb89c;
-  --secondary-green: #3b4d3e;     /* Ajouté : vert foncé pour gradient sombre */
-  --accent-teal: #3a4b4a;         /* Ajouté : teal foncé pour gradient sombre */
+  --background-light: #181a1b;
+  --background-white: #222;
+  --border-light: #333;
+  --primary-green: #8bb89c;      /* Lighter version for dark mode */
 }
 
 /* Accessibility mode variables */
@@ -265,12 +263,50 @@ a:hover {
   padding: 3rem 0;
 }
 
-:root[data-theme="dark"] .section-colored {
-  background: linear-gradient(135deg, #22302a, #1f2937); /* vert/gris foncé */
-  color: #e5e7eb;
+.section-colored .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Buttons */
+.section-colored h1,
+.section-colored h2,
+.section-colored h3 {
+  color: var(--text-dark);
+}
+
+/* --- SECTIONS PRINCIPALES --- */
+
+/* Section Services : dégradé vert sombre */
+.section-services {
+  background: linear-gradient(130deg, var(--primary-green), var(--text-dark));
+  color: var(--text-light);
+  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.10);
+  border-bottom: 1px solid #e0e4da;
+}
+
+/* Section Contact : fond blanc, texte foncé */
+.section-contact {
+  background-color: var(--background-white);
+  color: var(--text-dark);
+}
+
+/* --- CARDS --- */
+.card {
+  background-color: var(--background-white);
+  color: var(--text-dark);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+/* --- BOUTONS --- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -304,55 +340,35 @@ a:hover {
   color: var(--text-light);
 }
 
-/* Special hover state for outline buttons on dark backgrounds */
-.btn-outline[style*="border-color: var(--text-light)"]:hover {
-  background-color: var(--text-light);
-  color: var(--primary-green);
-}
-
-/* Cards */
-.card {
-  background-color: var(--background-white);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  box-shadow: var(--shadow-light);
-  transition: box-shadow var(--transition-normal);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-medium);
-}
-
-/* Contact section card backgrounds for dark mode */
-:root[data-theme="dark"] #contact .card,
-:root[data-theme="dark"] .contact-section .card {
-  background-color: var(--background-white);
-  border: 1px solid var(--border-light);
-}
-
-/* Quote/Citation */
+/* --- CITATION --- */
 .quote {
-  background-color: var(--background-white);
-  border-left: 4px solid var(--accent-teal);
-  padding: 2rem;
-  margin: 2rem 0;
+  font-size: 1.4rem;
   font-style: italic;
-  font-size: 1.1rem;
+  color: var(--primary-green);
+  background: rgba(220, 240, 220, 0.4);
+  border-left: 5px solid var(--primary-green);
+  padding: 2rem 2rem 1rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 2px 12px -6px rgba(0,0,0,0.06);
 }
 
 .quote-author {
+  display: block;
   margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--text-dark);
   font-style: normal;
   font-weight: 500;
-  color: var(--text-muted);
+  text-align: right;
 }
 
-/* Footer */
+/* --- FOOTER --- */
 .site-footer {
   background: linear-gradient(135deg, var(--primary-green), var(--text-dark));
   color: var(--text-light);
   padding: 3rem 0 1rem;
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 .footer-content {
@@ -362,112 +378,10 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-.footer-section h3 {
-  margin-bottom: 1rem;
-  color: var(--text-light);
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
 .footer-bottom {
   text-align: center;
-  margin-top: 2rem;
-}
-
-.footer-copyright {
-  display: block;
-  margin-top: 0;
-  padding: 0 1rem;
-  font-size: 0.95rem;
-  color: #9ca3af; /* gris clair */
-  font-weight: 300;
-  letter-spacing: 0.03em;
-}
-
-.footer-link {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-link:hover {
-  color: #4b5563; /* gris plus foncé */
-}
-
-:root[data-theme="dark"] .footer-copyright {
-  color: #6b7280; /* gris foncé en dark */
-}
-
-:root[data-theme="dark"] .footer-link {
-  color: #6b7280;
-}
-
-:root[data-theme="dark"] .footer-link:hover {
-  color: #d1d5db; /* gris très clair en dark */
-}
-
-/* Footer social links */
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.social-links a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  background-color: rgba(255,255,255,0.1);
-  transition: background-color var(--transition-fast);
-  text-decoration: none;
-  font-weight: 500;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--text-light);
-}
-
-.social-links a:hover {
-  background-color: rgba(255,255,255,0.2);
-  border-color: rgba(255,255,255,0.4);
-  color: var(--secondary-green);
-}
-
-/* Footer responsive */
-@media (max-width: 900px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  .social-links {
-    justify-content: center;
-  }
-}
-
-/* Mode sombre : texte plus clair et titres aussi */
-:root[data-theme="dark"] .site-footer {
-  background: linear-gradient(135deg, #1f2937, #111827);
-  border-top: 1px solid var(--border-light);
-  color: #e5e7eb;
-}
-
-:root[data-theme="dark"] .site-footer,
-:root[data-theme="dark"] .site-footer .footer-section,
-:root[data-theme="dark"] .site-footer .footer-bottom,
-:root[data-theme="dark"] .site-footer .footer-section ul,
-:root[data-theme="dark"] .site-footer .footer-section ul li,
-:root[data-theme="dark"] .site-footer .social-links a {
-  color: #e5e7eb !important;
-}
-
-:root[data-theme="dark"] .site-footer .footer-section h3 {
-  color: #e5e7eb !important;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .site-footer a {
