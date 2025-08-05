@@ -30,35 +30,33 @@ permalink: /outils/
         Accéder au simulateur gratuit
       </a>
     </div>
-    <div id="advanced-tools" class="card" style="background: linear-gradient(135deg, var(--primary-green), var(--text-dark)); color: var(--text-light); text-align: center;">
-      <h3 style="color: var(--text-light);">🔒 Outils avancés - Clients uniquement</h3>
+    <div id="advanced-tools" class="card-advanced-tools">
+      <h3>🔒 Outils avancés - Clients uniquement</h3>
       <p>Accédez à notre suite complète d'outils professionnels pour le suivi et l'optimisation de votre impact carbone :</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-        <div style="padding: 1rem; background-color: rgba(255,255,255,0.1); border-radius: var(--border-radius);">
-          <h4 style="color: var(--text-light);">📊 Dashboard avancé</h4>
-          <p>Tableaux de bord personnalisés avec métriques détaillées</p>
-        </div>
-        <div style="padding: 1rem; background-color: rgba(255,255,255,0.1); border-radius: var(--border-radius);">
-          <h4 style="color: var(--text-light);">📈 Suivi en temps réel</h4>
-          <p>Monitoring continu de vos émissions et progrès</p>
-        </div>
-        <div style="padding: 1rem; background-color: rgba(255,255,255,0.1); border-radius: var(--border-radius);">
-          <h4 style="color: var(--text-light);">📋 Rapports personnalisés</h4>
-          <p>Génération automatique de rapports détaillés</p>
-        </div>
-        <div style="padding: 1rem; background-color: rgba(255,255,255,0.1); border-radius: var(--border-radius);">
-          <h4 style="color: var(--text-light);">🎯 Plans d'action</h4>
-          <p>Recommandations personnalisées pour réduire votre impact</p>
-        </div>
+      <div>
+        <h4>📊 Dashboard avancé</h4>
+        <p>Tableaux de bord personnalisés avec métriques détaillées</p>
       </div>
-      <div class="paywall-section" style="margin-top: 2rem; padding: 2rem; background-color: rgba(255,255,255,0.2); border-radius: var(--border-radius); border: 2px solid rgba(255,255,255,0.3);">
-        <h4 style="color: var(--text-light); margin-bottom: 1rem;">🔐 Connexion client requise</h4>
+      <div>
+        <h4>📈 Suivi en temps réel</h4>
+        <p>Monitoring continu de vos émissions et progrès</p>
+      </div>
+      <div>
+        <h4>📋 Rapports personnalisés</h4>
+        <p>Génération automatique de rapports détaillés</p>
+      </div>
+      <div>
+        <h4>🎯 Plans d'action</h4>
+        <p>Recommandations personnalisées pour réduire votre impact</p>
+      </div>
+      <div class="paywall-section">
+        <h4>🔐 Connexion client requise</h4>
         <p>Ces outils avancés sont exclusivement réservés à nos clients accompagnés. Si vous êtes déjà client, connectez-vous pour accéder à votre espace personnalisé.</p>
-        <div style="margin-top: 1.5rem;">
-          <button onclick="showLoginModal()" class="btn" style="background-color: var(--text-light); color: var(--primary-green); margin-right: 1rem;">
+        <div class="paywall-buttons">
+          <button onclick="showLoginModal()" class="btn">
             Se connecter
           </button>
-          <a href="mailto:{{ site.social.email }}?subject=Demande d'accompagnement - Accès outils avancés" class="btn btn-outline" style="border-color: white; color: white;">
+          <a href="mailto:contact@solligam.fr?subject=Demande d'accompagnement - Accès outils avancés" class="btn btn-outline">
             Devenir client
           </a>
         </div>
@@ -85,13 +83,11 @@ permalink: /outils/
   </div>
 </div>
 
-<div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000;">
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 2rem; border-radius: var(--border-radius); max-width: 400px; width: 90%;">
-    <h3 style="margin-bottom: 1rem;">Connexion client</h3>
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">Cette fonctionnalité sera bientôt disponible. Pour accéder à vos outils, contactez-nous directement.</p>
-    <div style="text-align: center;">
-      <button onclick="closeLoginModal()" class="btn btn-outline" style="color: var(--primary-green); border-color: var(--primary-green);">Fermer</button>
-    </div>
+<div id="loginModal">
+  <div class="modal-content">
+    <h3>Connexion client</h3>
+    <p>Cette fonctionnalité sera bientôt disponible. Pour accéder à vos outils, contactez-nous directement.</p>
+    <button onclick="closeLoginModal()" class="btn btn-outline">Fermer</button>
   </div>
 </div>
 <script>

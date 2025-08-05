@@ -49,8 +49,9 @@ social:
   
 # Company info
 company:
-  name: "SAS Sol Ligam"
-  address: "215 cours du maréchal gallieni, 33000 Bordeaux"
+  name: "Sol Ligam"
+  officialName: "S.A.S. Sol Ligam"
+  address: "215 cours du Maréchal Gallieni, 33000 Bordeaux"
   phone: ""
   carbon_simulator: "https://monbilancarbone.solligam.fr"
 
@@ -71,27 +72,41 @@ navigation:
 seo:
   type: "Organization"
   name: "Sol Ligam"
+  description: "Sol Ligam accompagne les structures pour diminuer leur impact carbone, notamment dans l'événementiel. Simulateur gratuit, conseils et outils pour la décarbonation."
+  url: "https://solligam.fr"
+  logo: "/images/brand/logo.webp"
   links:
     - "https://www.instagram.com/sol_ligam/"
     - "https://www.linkedin.com/company/sol-ligam/"
-  logo: "/images/brand/logo.webp"
+  telephone: ""
+  email: "contact@solligam.fr"
+  address:
+    street_address: "215 cours du maréchal gallieni"
+    locality: "Bordeaux"
+    postal_code: "33000"
+    country: "FR"
 
 # Open Graph / Social Media
 og_image: "/images/brand/logo.webp"
 twitter:
   card: "summary_large_image"
   site: "@sol_ligam"
+  creator: "@sol_ligam"
+facebook:
+  app_id: ""
+  page: "https://www.facebook.com/solligam" # si tu as une page Facebook
 
 # Additional SEO settings
 webmaster_verifications:
-  google: ""
-  bing: ""
-  
+  google: "AAAAA"
+  bing: "AAAAA"
+  yandex: ""
+
 # Structured data
 organization:
   name: "SAS Sol Ligam"
-  legal_name: "SAS Sol Ligam" 
-  description: "Accompagnement pour la réduction de l'impact carbone"
+  legal_name: "SAS Sol Ligam"
+  description: "Accompagnement pour la réduction de l'impact carbone, conseils, outils et simulateur gratuit."
   url: "https://solligam.fr"
   logo: "https://solligam.fr/images/brand/logo.webp"
   address:
@@ -102,6 +117,11 @@ organization:
   contact_point:
     type: "customer service"
     email: "contact@solligam.fr"
+    telephone: ""
+    contact_type: "customer support"
+    area_served: "FR"
+    available_language: ["fr"]
   same_as:
     - "https://www.instagram.com/sol_ligam/"
     - "https://www.linkedin.com/company/sol-ligam/"
+    - "https://monbilancarbone.solligam.fr"
