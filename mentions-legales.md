@@ -8,14 +8,16 @@ permalink: /mentions-legales/
 ## Informations légales
 
 **Sol Ligam – SAS**  
-215 cours du maréchal gallieni  
-33000 Bordeaux  
+215 cours du Maréchal Gallieni  
+33000 Bordeaux – France  
 [contact@solligam.fr](mailto:contact@solligam.fr)
 
 **Président :** Louis DELIGNAC  
-**Directeurs Généraux :** Sacha DUPERRET, Baptiste ROYAU  
-**Capital social :** 30 € – RCS Bordeaux en cours d'immatriculation  
-**NAF-APE :** 70.22Z – TVA : FRXXXXXXXXXXX
+**Directeurs Généraux :** Sacha DUPERRET, Baptiste ROYAU, Marcel EZEDINE  
+**Capital social :** 40 €
+**RCS :** Bordeaux 944 681 816
+**NAF-APE :** 70.22Z – Conseil pour les affaires et autres conseils de gestion
+**TVA :** FR94944681816
 
 ## Hébergement du site
 
@@ -28,7 +30,7 @@ San Francisco, CA 94107 – États-Unis
 
 **Textes :** Sol Ligam  
 **Photographies :** à venir  
-**Conception et développement :** Ethan FACCA - [https://untypequicode.fr/](https://untypequicode.fr/)
+**Conception et développement :** Ethan FACCA – [https://untypequicode.fr/](https://untypequicode.fr/)
 
 ## Traitement des données personnelles et droit d'accès, de modification et de suppression
 

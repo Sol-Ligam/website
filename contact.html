@@ -18,13 +18,13 @@ description: "Contactez Sol Ligam pour votre accompagnement en réduction d'impa
       <h2>Choisissez votre moyen de contact</h2>
       <p>Nous sommes disponibles sur plusieurs canaux pour répondre à vos questions et discuter de vos projets de décarbonation.</p>
       
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;">
+  <div class="card-grid" style="margin-top: 3rem;">
         <!-- Email -->
         <a href="mailto:{{ site.social.email }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-          <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px; height: 100%; cursor: pointer;">
+          <div class="card">
             <h3>Email</h3>
             <p>Pour un échange détaillé sur vos besoins</p>
-            <span class="btn btn-primary" style="display: inline-block; pointer-events: none;">
+            <span class="btn btn-primary">
               Envoyer un email
             </span>
           </div>
@@ -32,10 +32,10 @@ description: "Contactez Sol Ligam pour votre accompagnement en réduction d'impa
         
         <!-- Instagram -->
         <a href="{{ site.social.instagram }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease;" target="_blank" rel="noopener" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-          <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px; height: 100%; cursor: pointer;">
+          <div class="card">
             <h3>Instagram</h3>
             <p>Suivez nos actualités et projets</p>
-            <span class="btn btn-primary" style="display: inline-block; pointer-events: none;">
+            <span class="btn btn-primary">
               Voir notre Instagram
             </span>
           </div>
@@ -43,36 +43,24 @@ description: "Contactez Sol Ligam pour votre accompagnement en réduction d'impa
         
         <!-- LinkedIn -->
         <a href="{{ site.social.linkedin }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease;" target="_blank" rel="noopener" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-          <div class="card" style="text-align: center; flex: 1; min-width: 250px; max-width: 300px; height: 100%; cursor: pointer;">
+          <div class="card">
             <h3>LinkedIn</h3>
             <p>Réseau professionnel et articles</p>
-            <span class="btn btn-primary" style="display: inline-block; pointer-events: none;">
+            <span class="btn btn-primary">
               Voir notre LinkedIn
             </span>
           </div>
         </a>
-      </div>
+      </div> <!-- fin du .card-grid ou .container -->
       
-      <!-- Company Information -->
-      <div style="margin-top: 3rem; padding: 2rem; background-color: var(--background-white); border-radius: var(--border-radius);">
-        <h3>Informations pratiques</h3>
-        <p><strong>Email :</strong> {{ site.social.email }}</p>
-        <p><strong>Adresse :</strong> {{ site.company.address }}</p>
-        <p><strong>Simulateur gratuit :</strong> <a href="{{ site.company.carbon_simulator }}" target="_blank">{{ site.company.carbon_simulator }}</a></p>
-      </div>
-      
-      <!-- Quick Actions -->
-      <div style="margin-top: 2rem;">
-        <h3>Actions rapides</h3>
-        <p>
-          <a href="{{ site.company.carbon_simulator }}" class="btn btn-outline" target="_blank" style="margin-right: 1rem;">
-            Essayer le simulateur
-          </a>
-          <a href="/projets/" class="btn btn-outline">
-            Voir nos projets
-          </a>
-        </p>
-      </div>
     </div>
+  </div>
+</section>
+
+<section class="section practical-info">
+  <div class="container">
+    <h2>Informations pratiques</h2>
+    <p><strong>Email :</strong> <a href="mailto:contact@solligam.fr">contact@solligam.fr</a></p>
+    <p><strong>Simulateur gratuit :</strong> <a href="https://monbilancarbone.solligam.fr" target="_blank">https://monbilancarbone.solligam.fr</a></p>
   </div>
 </section>
