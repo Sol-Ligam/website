@@ -40,29 +40,29 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "{{ site.organization.name }}",
-    "legalName": "{{ site.organization.legal_name }}",
-    "description": "{{ site.organization.description }}",
-    "url": "{{ site.organization.url }}",
-    "logo": "{{ site.organization.logo }}",
-    "email": "{{ site.organization.contact_point.email }}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "{{ site.organization.address.street_address }}",
-      "addressLocality": "{{ site.organization.address.locality }}",
-      "postalCode": "{{ site.organization.address.postal_code }}",
-      "addressCountry": "{{ site.organization.address.country }}"
-    },
+    "name": "Sol Ligam",
+    "url": "https://solligam.fr",
+    "logo": "https://solligam.fr/images/brand/logo.webp",
+    "description": "Accompagnement pour la réduction de l'impact carbone, simulateur gratuit, conseils et outils pour la décarbonation.",
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "{{ site.organization.contact_point.type }}",
-      "email": "{{ site.organization.contact_point.email }}"
+      "email": "contact@solligam.fr",
+      "contactType": "customer support",
+      "areaServed": "FR",
+      "availableLanguage": "fr"
     },
-    "sameAs": {{ site.organization.same_as | jsonify }}
+    "sameAs": [
+      "https://www.instagram.com/sol_ligam/",
+      "https://www.linkedin.com/company/sol-ligam/",
+      "https://www.pappers.fr/entreprise/sol-ligam-944681816",
+      "https://infonet.fr/entreprises/94468181600012-sol-ligam/",
+      "https://www.pagesjaunes.fr/siret/94468181600012",
+      "https://annuaire-entreprises.data.gouv.fr/entreprise/sol-ligam-944681816"
+    ]
   }
   </script>
   
-  {% if page.url == "/" %}
+  <!-- {% if page.url == "/" %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,7 +77,7 @@
     }
   }
   </script>
-  {% endif %}
+  {% endif %} -->
   
   <!-- Cache optimization meta tags -->
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" data-turbo-track="false">
