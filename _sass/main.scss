@@ -60,6 +60,25 @@
   box-sizing: border-box;
 }
 
+/* Focus visible personnalisé pour l'accessibilité */
+a:focus-visible, button:focus-visible, .btn:focus-visible, .btn-outline:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+  z-index: 2;
+  border-radius: 4px;
+  transition: outline 0.2s, box-shadow 0.2s;
+}
+
+/* Mode sombre : focus visible adapté */
+:root[data-theme="dark"] a:focus-visible,
+:root[data-theme="dark"] button:focus-visible,
+:root[data-theme="dark"] .btn:focus-visible,
+:root[data-theme="dark"] .btn-outline:focus-visible {
+  outline: 3px solid #aee9d1;
+  box-shadow: 0 0 0 3px rgba(174,233,209,0.18);
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
