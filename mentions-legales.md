@@ -43,7 +43,7 @@ Sol Ligam ne traite pas ces données de manière nominative et ne les croise pas
 Conformément à la loi Informatique et Libertés (art. 34, loi 78-17 du 6 janvier 1978), vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données.
 
 **Pour exercer ce droit :**  
-Sol Ligam – 165 avenue de la Paillère, apt 2, 33600 Pessac  
+Sol Ligam – 215 cours du Maréchal Gallieni 33000 Bordeaux 
 [contact@solligam.fr](mailto:contact@solligam.fr)
 
 ## Dispositions légales

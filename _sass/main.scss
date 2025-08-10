@@ -39,7 +39,7 @@
   --background-white: #222;
   --border-light: #333;
   --primary-green: #8bb89c;      /* Lighter version for dark mode */
-}
+} 
 
 /* Accessibility mode variables */
 :root[data-theme="accessible"] {
@@ -47,7 +47,7 @@
   --secondary-green: #000000;    /* High contrast black */
   --accent-teal: #000000;        /* High contrast black */
   --text-dark: #000000;          /* Pure black text */
-  --text-light: #ffffff;         /* Pure white text */
+  --text-light: #ffffff;         /*Pure white text */
   --background-light: #ffffff;   /* Pure white background */
   --background-white: #ffffff;   /* Pure white background */
   --border-light: #000000;       /* Black borders */
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-bottom: 1rem;
-  max-width: 65ch; /* Optimal reading width */
+  max-width: 65ch;
 }
 
 /* Ensure text centers properly in sections with center alignment */
@@ -215,7 +215,7 @@ a:hover {
 }
 
 .site-logo {
-  height: 80px;  /* Increased from 70px for better visibility */
+  height: 80px;
   width: auto;
 }
 
@@ -252,18 +252,66 @@ a:hover {
   min-height: 320px;
   display: flex;
   align-items: center;
-  box-sizing: border-box; // Ajouté pour éviter tout débordement
+  // justify-content: center;
+  box-sizing: border-box;
+  // padding: 0;
 }
+
+/* Semble inutile */
+// .hero-content {
+//   width: 100%;
+//   max-width: 480px;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 3.5rem;
+//   padding: 4rem 1rem 3rem 1rem;
+// }
+
+/* Espacement spécifique entre les éléments du hero A RETRAVAILLER - ATTENTION */
+// .hero h1 {
+//   margin-bottom: 2.2rem;
+// }
+// .hero .hero-subtitle {
+//   margin-bottom: 1.7rem;
+// }
+// .hero p {
+//   margin-bottom: 2.5rem;
+// }
+// .hero .btn-group {
+//   margin-top: 2.2rem;
+// }
+
+.hero h1 {
+  color: var(--text-light);
+  background: none;
+  font-size: 3rem;
+  // font-weight: 700;
+  margin-bottom: 1rem;
+  // line-height: 1.1;
+}
+
+.hero p {
+  color: var(--text-light);
+  font-size: 1.25rem;
+  margin: 0 auto 2rem;
+  max-width: 50ch;
+  // line-height: 1.5;
+}
+
+/* Semble inutile - A RETRAVAILLER - ATTENTION */
+// .hero .hero-subtitle {
+//   font-size: 1rem;
+//   color: var(--text-light);
+//   margin-bottom: 1.2rem;
+//   font-weight: 400;
+// }
 
 :root[data-theme="dark"] .hero {
   background: linear-gradient(135deg, #22302a, #1f2937);
   color: #e5e7eb;
-}
-
-.hero h1 {
-  color: var(--text-light);
-  font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .hero p {
@@ -272,7 +320,12 @@ a:hover {
   margin: 0 auto 2rem;
 }
 
-/* Full-width colored sections for consistency */
+.section-colored .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .section-colored {
   background: linear-gradient(135deg, var(--accent-teal), var(--secondary-green));
   color: var(--text-dark);
@@ -285,12 +338,6 @@ a:hover {
   padding: 3rem 0;
 }
 
-.section-colored .container {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 .section-colored h1,
 .section-colored h2,
 .section-colored h3 {
@@ -298,8 +345,6 @@ a:hover {
 }
 
 /* --- SECTIONS PRINCIPALES --- */
-
-/* Section Services : gradient dynamique selon le thème */
 .section-services {
   background: linear-gradient(130deg, var(--primary-green), var(--secondary-green));
   color: var(--text-light);
@@ -307,13 +352,11 @@ a:hover {
   border-bottom: 1px solid #e0e4da;
 }
 
-/* Mode sombre : assure des couleurs très foncées pour le gradient et le texte */
 :root[data-theme="dark"] .section-services {
   background: linear-gradient(130deg, var(--primary-green), var(--secondary-green));
   color: var(--text-light);
 }
 
-/* Section Contact : fond blanc, texte foncé */
 .section-contact {
   background-color: var(--background-white);
   color: var(--text-dark);
@@ -370,15 +413,14 @@ a:hover {
   margin-right: auto;
 }
 
-/* Style général (desktop & mobile) */
 .card-advanced-tools {
   background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
   color: var(--text-light);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-medium);
   padding: 2.5rem 2rem;
-  margin: 0 auto 2rem auto; /* même centrage que .card */
-  max-width: 900px;   /* même valeur que .card */
+  margin: 0 auto 2rem auto;
+  max-width: 900px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -420,7 +462,6 @@ a:hover {
   text-align: left;
 }
 
-/* Centrage des titres dans la section outils avancés */
 .card-advanced-tools h3,
 .card-advanced-tools h4,
 .card-advanced-tools .paywall-section h4 {
@@ -428,7 +469,6 @@ a:hover {
   justify-content: center;
 }
 
-/* Centrage des boutons dans la section outils avancés */
 .card-advanced-tools .paywall-buttons {
   display: flex;
   justify-content: center;
@@ -437,7 +477,6 @@ a:hover {
   margin-top: 1rem;
 }
 
-/* Paywall (connexion requise) */
 .card-advanced-tools .paywall-section {
   background: rgba(255,255,255,0.09);
   border-radius: var(--border-radius);
@@ -463,46 +502,8 @@ a:hover {
   font-size: 0.98rem;
 }
 
-.card-advanced-tools .paywall-buttons .btn,
-.card-advanced-tools .paywall-buttons .btn-outline {
-  min-width: 130px;
-  max-width: 180px;
-  width: 100%;
-  height: 40px;
-  font-size: 1rem;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  transition: all var(--transition-normal);
-}
-
-.card-advanced-tools .paywall-buttons .btn-primary {
-  background-color: var(--primary-green);
-  color: var(--text-light);
-}
-
-.card-advanced-tools .paywall-buttons .btn-primary:hover {
-  background-color: var(--secondary-green);
-  color: var(--text-light);
-}
-
-.card-advanced-tools .paywall-buttons .btn-outline {
-  background-color: transparent;
-  color: var(--primary-green);
-  border: 2px solid var(--primary-green);
-}
-
-.card-advanced-tools .paywall-buttons .btn-outline:hover {
-  background-color: var(--primary-green);
-  color: var(--text-light);
-}
-
 /* --- BOUTONS UNIFORMES --- */
-// Boutons adaptatifs et colorés
+/* Styles communs pour .btn et .btn-primary */
 .btn,
 .btn-primary {
   display: flex;
@@ -516,13 +517,16 @@ a:hover {
   text-align: center;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-normal);
   text-decoration: none !important;
   box-shadow: 0 2px 8px -4px rgba(0,0,0,0.10);
   border: none;
   white-space: nowrap;
   background: var(--primary-green);
-  color: var(--text-light);
+  // color: var(--text-light);
+  transition: background 0.35s cubic-bezier(0.4,0,0.2,1),
+              color 0.25s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+/* Fin du bloc .btn, .btn-primary */
 }
 
 .btn-outline {
@@ -537,7 +541,10 @@ a:hover {
   text-align: center;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: background 0.35s cubic-bezier(0.4,0,0.2,1),
+              color 0.25s cubic-bezier(0.4,0,0.2,1),
+              border-color 0.25s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
   text-decoration: none !important;
   box-shadow: 0 2px 8px -4px rgba(0,0,0,0.10);
   border: 2px solid var(--primary-green);
@@ -546,66 +553,56 @@ a:hover {
   color: var(--primary-green);
 }
 
+/* Hover spécifique pour le .btn-primary du hero : fond vert foncé, texte foncé */
+// .hero .btn-primary:hover {
+//   background: var(--secondary-green) !important;
+//   box-shadow: 0 4px 16px -4px rgba(106,136,108,0.13) !important;
+// }
+
 .btn:hover,
 .btn-primary:hover {
-  background: var(--secondary-green);
+  background: linear-gradient(90deg, var(--secondary-green) 60%, var(--primary-green) 100%);
   color: var(--text-dark);
+  box-shadow: 0 4px 16px -4px rgba(106,136,108,0.13);
 }
 
 .btn-outline:hover {
-  background: var(--primary-green);
+  background: linear-gradient(90deg, var(--primary-green) 60%, var(--secondary-green) 100%);
   color: var(--text-light);
   border-color: var(--primary-green);
+  box-shadow: 0 4px 16px -4px rgba(106,136,108,0.13);
 }
 
 :root[data-theme="dark"] .btn,
 :root[data-theme="dark"] .btn-primary {
   background: var(--primary-green);
-  color: var(--text-light);
 }
 
 :root[data-theme="dark"] .btn-outline {
-  background: transparent;
-  color: var(--accent-teal);
-  border: 2px solid var(--accent-teal);
-}
-
-:root[data-theme="dark"] .btn:hover,
-:root[data-theme="dark"] .btn-primary:hover {
-  background: var(--secondary-green);
-  color: var(--text-light);
-}
-
-:root[data-theme="dark"] .btn-outline:hover {
-  background: var(--accent-teal);
-  color: var(--primary-green);
-  border-color: var(--accent-teal);
-}
-
-.btn-outline {
   background: transparent;
   color: var(--primary-green);
   border: 2px solid var(--primary-green);
 }
 
-.btn:hover,
-.btn-primary:hover {
-  background: var(--secondary-green);
-  color: var(--text-dark);
+:root[data-theme="dark"] a.btn.btn-outline {
+  color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
 }
 
-.btn-outline:hover {
-  background: var(--primary-green);
-  color: var(--text-light);
-  border-color: var(--primary-green);
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .btn-primary:hover {
+  background: var(--primary-green) !important;
+  color: var(--text-light) !important;
 }
 
-:root[data-theme="dark"] .btn,
-:root[data-theme="dark"] .btn-primary {
-  background: var(--primary-green);
-  color: var(--text-light);
+:root[data-theme="dark"] .btn-outline:hover,
+:root[data-theme="dark"] a.btn.btn-outline:hover {
+  background: var(--accent-teal);
+  background: var(--secondary-green) !important;
+  color: var(--text-light) !important;
 }
 
+.btn-outline,
 :root[data-theme="dark"] .btn-outline {
   background: transparent;
   color: var(--primary-green);
@@ -650,7 +647,6 @@ a:hover {
   }
 }
 
-/* Pour éviter les conflits avec d'autres sections */
 .hero .btn,
 .hero .btn-primary,
 .hero .btn-outline {
@@ -659,7 +655,26 @@ a:hover {
   max-width: none;
 }
 
-/* Centrage des boutons dans la section outils avancés */
+@media (max-width: 700px) {
+  // .hero-content {
+  //   max-width: 98vw;
+  //   padding: 1.8rem 0.5rem 1.2rem 0.5rem;
+  //   gap: 1.3rem;
+  // }
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .hero .hero-subtitle {
+    font-size: 1.13rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+  }
+}
+
 .card-advanced-tools .paywall-buttons {
   display: flex;
   justify-content: center;
@@ -745,7 +760,6 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
-/* Social links in footer */
 .social-links {
   display: flex;
   gap: 1.5rem;
@@ -768,7 +782,6 @@ a:hover {
   border-color: rgba(255,255,255,0.4);
 }
 
-/* Mobile burger menu */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -952,7 +965,7 @@ a:hover {
   }
 }
 
-/* --- Section Services --- *//* --- Section Services --- */
+/* --- Section Services --- */
 
 .section-services .card .btn,
 .section-services .card .btn-outline {
