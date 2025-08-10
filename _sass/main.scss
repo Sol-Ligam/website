@@ -53,6 +53,39 @@
   --border-light: #000000;       /* Black borders */
 }
 
+/* Boutons en mode accessible : contraste élevé, toujours visibles */
+
+:root[data-theme="accessible"] .btn,
+:root[data-theme="accessible"] .btn-primary,
+:root[data-theme="accessible"] .btn-outline {
+  background: var(--primary-green) !important;
+  color: var(--text-light) !important;
+  border: 2px solid var(--primary-green) !important;
+  box-shadow: 0 0 0 2px #000 !important;
+}
+
+
+/* Désactive les effets hover en mode accessible */
+
+/* Désactive tous les effets hover sur tous les types de boutons en mode accessible */
+:root[data-theme="accessible"] .btn:hover,
+:root[data-theme="accessible"] .btn-primary:hover,
+:root[data-theme="accessible"] .btn-outline:hover,
+:root[data-theme="accessible"] a.btn:hover,
+:root[data-theme="accessible"] a.btn-primary:hover,
+:root[data-theme="accessible"] a.btn-outline:hover,
+:root[data-theme="accessible"] button.btn:hover,
+:root[data-theme="accessible"] button.btn-primary:hover,
+:root[data-theme="accessible"] button.btn-outline:hover {
+  background: var(--primary-green) !important;
+  color: var(--text-light) !important;
+  border: 2px solid var(--primary-green) !important;
+  box-shadow: 0 0 0 2px #000 !important;
+  filter: none !important;
+  transition: none !important;
+  cursor: pointer;
+}
+
 /* Reset and base styles */
 * {
   margin: 0;

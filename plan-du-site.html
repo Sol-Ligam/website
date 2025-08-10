@@ -1,0 +1,22 @@
+---
+layout: page
+title: "Plan du site"
+description: "Plan du site HTML pour faciliter la navigation et le SEO."
+permalink: /plan-du-site/
+---
+
+<h1>Plan du site</h1>
+<ul>
+  <li><a href="/">Accueil</a></li>
+  <li><a href="/projets/">Projets</a>
+    <ul>
+      {% for project in site.projects %}
+        <li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li><a href="/outils/">Outils</a></li>
+  <li><a href="/a-propos/">À propos</a></li>
+  <li><a href="/contact/">Contact</a></li>
+  <li><a href="/mentions-legales/">Mentions légales</a></li>
+</ul>

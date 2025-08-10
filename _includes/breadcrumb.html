@@ -1,0 +1,24 @@
+{% comment %}
+Fil d'Ariane (breadcrumb) universel pour pages profondes
+Affiche Accueil > Section > Page
+{% endcomment %}
+{% assign is_home = page.url == '/' or page.url == site.baseurl %}
+{% unless is_home %}
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a>
+  {% if page.url contains '/projets/' and page.collection == 'projects' %}
+    &nbsp;&gt;&nbsp;<a href="/projets/">Projets</a>
+    &nbsp;&gt;&nbsp;<span aria-current="page">{{ page.title }}</span>
+  {% elsif page.url contains '/projets/' %}
+    &nbsp;&gt;&nbsp;<span aria-current="page">Projets</span>
+  {% elsif page.url contains '/outils/' %}
+    &nbsp;&gt;&nbsp;<span aria-current="page">Outils</span>
+  {% elsif page.url contains '/a-propos/' %}
+    &nbsp;&gt;&nbsp;<span aria-current="page">À propos</span>
+  {% elsif page.url contains '/contact/' %}
+    &nbsp;&gt;&nbsp;<span aria-current="page">Contact</span>
+  {% elsif page.url contains '/mentions-legales/' %}
+    &nbsp;&gt;&nbsp;<span aria-current="page">Mentions légales</span>
+  {% endif %}
+</nav>
+{% endunless %}

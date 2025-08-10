@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Sitemap: https://solligam.fr/sitemap.xml
+# Bloque les dossiers techniques inutiles pour le SEO
+Disallow: /assets/
+Disallow: /images/
+Disallow: /_site/
+Disallow: /archive/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /.git/
+# Autorise l'accès aux pages importantes
+Allow: /projets/
+Allow: /outils/
+Allow: /a-propos/
+Allow: /contact/
+Allow: /plan-du-site/
+Allow: /mentions-legales/
+# Empêche l'indexation des fichiers temporaires ou de build
+Disallow: /*.map$
+Disallow: /*.scss$
